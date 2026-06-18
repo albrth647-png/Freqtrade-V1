@@ -1,0 +1,97 @@
+{
+    "trading_mode": "futures",
+    "margin_mode": "isolated",
+    "max_open_trades": 3,
+    "stake_currency": "USDC",
+    "stake_amount": "unlimited",
+    "tradable_balance_ratio": 0.95,
+    "dry_run_wallet": 30,
+    "dry_run": true,
+    
+    "exchange": {
+        "name": "hyperliquid",
+        "key": "TU_HYPERLIQUID_API_KEY",
+        "secret": "TU_HYPERLIQUID_API_SECRET",
+        "ccxt_config": {
+            "enableRateLimit": true,
+            "options": {
+                "defaultType": "swap"
+            }
+        },
+        "ccxt_async_config": {
+            "enableRateLimit": true
+        },
+        "pair_whitelist": [
+            "BTC/USDC:USDC",
+            "ETH/USDC:USDC",
+            "SOL/USDC:USDC"
+        ],
+        "pair_blacklist": []
+    },
+    
+    "entry_pricing": {
+        "price_side": "same",
+        "use_order_book": true,
+        "order_book_top": 1
+    },
+    
+    "exit_pricing": {
+        "price_side": "same",
+        "use_order_book": true,
+        "order_book_top": 1
+    },
+    
+    "pairlists": [
+        {
+            "method": "StaticPairList"
+        }
+    ],
+    
+    "telegram": {
+        "enabled": true,
+        "token": "TU_TELEGRAM_BOT_TOKEN",
+        "chat_id": "TU_TELEGRAM_CHAT_ID",
+        "notification_settings": {
+            "status": "silent",
+            "warning": "on",
+            "startup": "on",
+            "entry": "on",
+            "exit": "on",
+            "entry_cancel": "silent",
+            "exit_cancel": "silent",
+            "entry_fill": "on",
+            "exit_fill": "on",
+            "protection_trigger": "on",
+            "protection_trigger_global": "on",
+            "strategy_msg": "silent",
+            "show_candle": "off"
+        },
+        "reload": true
+    },
+    
+    "api_server": {
+        "enabled": true,
+        "listen_ip_address": "0.0.0.0",
+        "listen_port": 8080,
+        "verbosity": "error",
+        "enable_openapi": false,
+        "jwt_secret_key": "cambia_esto_por_algo_aleatorio_largo_y_seguro_1234567890",
+        "CORS_origins": ["http://localhost:8080", "http://127.0.0.1:8080"],
+        "username": "freqtrade",
+        "password": "cambia_esta_password_segura"
+    },
+    
+    "bot_name": "TSM_Momentum_Bot",
+    "initial_state": "running",
+    "force_entry_enable": false,
+    "internals": {
+        "process_throttle_secs": 5
+    },
+    
+    "strategy": "TimeSeriesMomentum",
+    "strategy_path": "user_data/strategies/TimeSeriesMomentum.py",
+    
+    "leverage": {
+        "default": 5
+    }
+}

@@ -1,0 +1,174 @@
+# ============================================================
+# .gitignore — Crypto Bot Cuba
+# ============================================================
+
+# ============================================================
+# SECRETS Y CONFIGS SENSIBLES (NUNCA subir a GitHub)
+# ============================================================
+
+# Archivos .env con claves
+.env
+.env.local
+.env.*.local
+*.env
+
+# Configs de Freqtrade con claves reales (mantener templates)
+configs/config_*.local.json
+configs/config_personal.json
+user_data/config_*.local.json
+user_data/config_personal.json
+
+# API keys y secrets
+*api_key*
+*secret*
+*seed*
+*mnemonic*
+credentials.json
+secrets.json
+
+# Wallets
+*.keystore
+*.wallet
+wallet.dat
+
+# ============================================================
+# LOGS Y ESTADO DEL BOT
+# ============================================================
+
+logs/
+*.log
+*.log.*
+
+# Estado persistente del bot
+state.json
+*state*.json
+tradesv3*.sqlite
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+
+# ============================================================
+# PYTHON
+# ============================================================
+
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Testing
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# Type checkers
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pyre/
+.pytype/
+
+# ============================================================
+# FREQTRADE ESPECÍFICO
+# ============================================================
+
+user_data/logs/
+user_data/backtest_results/
+user_data/data/
+user_data/hyperopt_results/
+user_data/notebooks/.ipynb_checkpoints
+user_data/strategies/__pycache__/
+user_data/*.sqlite
+user_data/*.sqlite-shm
+user_data/*.sqlite-wal
+user_data/config*.json
+!user_data/config_*.json.example
+freqtrade-plot.html
+freqtrade-profit-plot.html
+
+# ============================================================
+# TERMUX / ANDROID
+# ============================================================
+
+.termux/
+storage/
+*.apk
+
+# ============================================================
+# IDE Y EDITORES
+# ============================================================
+
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.pydevproject
+.settings/
+*.sublime-project
+*.sublime-workspace
+
+# ============================================================
+# SISTEMA OPERATIVO
+# ============================================================
+
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# ============================================================
+# DOCUMENTACIÓN AUXILIAR
+# ============================================================
+
+_backups/
+_temp/
+tmp/
+*.tmp
+*.bak
+*.old
+
+# ============================================================
+# HIPERLIQUID SDK ESPECÍFICO
+# ============================================================
+
+*.hyperliquid
+hyperliquid_*.json
+api_wallet_*.json
